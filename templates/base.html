@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pan Tadeusz – Adam Mickiewicz</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #0f172a;
+            --bg-sidebar: #1e1b4b;
+            --bg-card: #1e293b;
+            --accent-gold: #fbbf24;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h5, .navbar-brand {
+            font-family: 'Playfair Display', serif;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            border-bottom: 2px solid rgba(251, 191, 36, 0.2);
+        }
+
+        header h1 {
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        nav {
+            min-height: calc(100vh - 120px);
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        nav h5 {
+            color: var(--accent-gold);
+            letter-spacing: 0.5px;
+        }
+
+        /* Stylowanie paska przewijania dla menu */
+        nav::-webkit-scrollbar {
+            width: 6px;
+        }
+        nav::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .nav-link {
+            color: var(--text-muted);
+            border-radius: 8px;
+            margin-bottom: 4px;
+            padding: 8px 12px;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(251, 191, 36, 0.1);
+            color: var(--accent-gold);
+            transform: translateX(4px);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(90deg, #d97706, #b45309);
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+
+        main {
+            background: var(--bg-card);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-height: 80vh;
+        }
+
+        main h2 {
+            color: var(--accent-gold);
+            border-bottom: 2px solid rgba(251, 191, 36, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .lead {
+            color: #cbd5e1;
+            font-style: italic;
+        }
+
+        footer {
+            background: #090d16;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header class="text-center py-4 px-3">
+    <h1 class="display-4 fw-bold mb-1">Pan Tadeusz</h1>
+    <p class="lead mb-0 text-warning">Adam Mickiewicz – epopeja narodowa</p>
+</header>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-3 col-lg-2 p-3 overflow-auto">
+            <h5 class="mb-3 px-2 text-uppercase fs-6 fw-bold">Spis treści</h5>
+            <ul class="nav flex-column">
+                <li><a class="nav-link" href="/">Strona główna</a></li>
+                <li><a class="nav-link" href="/k1">Księga I</a></li>
+                <li><a class="nav-link" href="/k2">Księga II</a></li>
+                <li><a class="nav-link" href="/k3">Księga III</a></li>
+                <li><a class="nav-link" href="/k4">Księga IV</a></li>
+                <li><a class="nav-link" href="/k5">Księga V</a></li>
+                <li><a class="nav-link" href="/k6">Księga VI</a></li>
+                <li><a class="nav-link" href="/k7">Księga VII</a></li>
+                <li><a class="nav-link" href="/k8">Księga VIII</a></li>
+                <li><a class="nav-link" href="/k9">Księga IX</a></li>
+                <li><a class="nav-link" href="/k10">Księga X</a></li>
+                <li><a class="nav-link" href="/k11">Księga XI</a></li>
+                <li><a class="nav-link" href="/k12">Księga XII</a></li>
+            </ul>
+        </nav>
+
+        <main id="content" class="col-md-9 col-lg-10 p-5 my-3">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</div>
+
+<footer class="text-center p-3 mt-4">
+    <p class="mb-0"> <span class="text-warning">Aleksandra Kurek</span></p>
+</footer>
+
+</body>
+</html>
